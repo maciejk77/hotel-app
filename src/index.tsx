@@ -3,18 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { IDataContext, IHotel } from './interfaces';
+import { INITIAL_DATA } from './constants';
 import reportWebVitals from './reportWebVitals';
 
-export const DataContext = createContext<IDataContext>({
-  rating: 3,
-  setRating: () => {},
-  adultsCount: 2,
-  setAdultsCount: () => {},
-  childrenCount: 0,
-  setChildrenCount: () => {},
-  hotels: [],
-  setHotels: () => {},
-});
+export const DataContext = createContext<IDataContext>(INITIAL_DATA);
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [rating, setRating] = useState(3);

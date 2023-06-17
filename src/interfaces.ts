@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
+// Data Context
+
 type TDispatch = Dispatch<SetStateAction<number>>;
 
 export interface IDataContext {
@@ -13,15 +15,18 @@ export interface IDataContext {
   setHotels: Dispatch<SetStateAction<IHotel[]>>;
 }
 
-interface IFacility {
+// Hotel API data
+
+export interface IFacility {
   code: string;
 }
 
-interface IImage {
+export interface IImage {
   url: string;
+  alt?: string;
 }
 
-interface IPosition {
+export interface IPosition {
   latitude: number;
   longitude: number;
   timezone: string;
@@ -47,4 +52,41 @@ export interface IHotel {
   checkOutMinutes: string;
   position: IPosition;
   starRating: string;
+}
+
+// Room API data
+
+export interface IOccupancy {
+  maxAdults: number;
+  maxChildren: number;
+  maxOverall: number;
+}
+
+export interface IFacility {
+  code: string;
+  name: string;
+}
+
+export interface IRoom {
+  id: string;
+  name: string;
+  shortDescription: string;
+  longDescription: string;
+  occupancy: IOccupancy;
+  disabledAccess: boolean;
+  bedConfiguration: string;
+  images: IImage[];
+  facilities: IFacility[];
+}
+
+export interface IRatePlan {
+  id: string;
+  shortDescription: string;
+  longDescription: string;
+  prePayment: string;
+}
+
+export interface IRooms {
+  rooms: IRoom[];
+  ratePlans: IRatePlan[];
 }
