@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 - `yarn` to install all dependencies
-- `yarn start` to view project [http://localhost:3000](http://localhost:3000) in the browser.
+- `yarn start` to view project at [http://localhost:3000](http://localhost:3000) in the browser.
 
 # API
 
@@ -23,3 +23,5 @@ In the project directory, you can run:
 - See mockup for additional
 
 ## Notes
+
+TBC
