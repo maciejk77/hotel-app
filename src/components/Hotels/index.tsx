@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from 'react';
-import { DataContext } from '../..';
+import React, { useEffect, useState } from 'react';
 import { HOTEL_API_URL } from '../../constants';
 import HotelCard from '../HotelCard';
+import { IHotel } from '../../interfaces';
 
 const Hotels = () => {
-  const { hotels, setHotels } = useContext(DataContext);
+  const [hotels, setHotels] = useState<IHotel[]>([]);
 
-  console.log(hotels);
   useEffect(() => {
     fetch(HOTEL_API_URL)
       .then((res) => res.json())
@@ -17,7 +16,7 @@ const Hotels = () => {
 
   return (
     <>
-      {hotels.map((hotel) => (
+      {hotels?.map((hotel) => (
         <div key={hotel.id}>
           <HotelCard hotel={hotel} />
         </div>

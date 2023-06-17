@@ -2,7 +2,7 @@ import { useState, createContext, StrictMode, ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { IDataContext, IHotel } from './interfaces';
+import { IDataContext } from './interfaces';
 import { INITIAL_DATA } from './constants';
 import reportWebVitals from './reportWebVitals';
 
@@ -12,7 +12,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [rating, setRating] = useState(3);
   const [adultsCount, setAdultsCount] = useState(2);
   const [childrenCount, setChildrenCount] = useState(0);
-  const [hotels, setHotels] = useState<IHotel[]>([]);
 
   return (
     <DataContext.Provider
@@ -23,8 +22,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         setAdultsCount,
         childrenCount,
         setChildrenCount,
-        hotels,
-        setHotels,
       }}
     >
       {children}

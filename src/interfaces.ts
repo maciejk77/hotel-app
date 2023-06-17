@@ -11,8 +11,6 @@ export interface IDataContext {
   setAdultsCount: TDispatch;
   childrenCount: number;
   setChildrenCount: TDispatch;
-  hotels: [] | IHotel[];
-  setHotels: Dispatch<SetStateAction<IHotel[]>>;
 }
 
 // Hotel API data
