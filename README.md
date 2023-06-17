@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Hotel App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,10 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Run `yarn` to install all dependencies
+- Run `yarn start` to view project [http://localhost:3000](http://localhost:3000) in the browser.
 
 # API
 
