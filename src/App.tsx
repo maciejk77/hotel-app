@@ -1,12 +1,16 @@
 import React from 'react';
+import Rating from './components/Rating';
+import Hotels from './components/Hotels';
 // import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">Hotel Room</header>
-    </div>
+    <>
+      <div>Image</div>
+      <Rating />
+      <Hotels />
+    </>
   );
-}
+};
 
 export default App;
