@@ -9,9 +9,9 @@ import reportWebVitals from './reportWebVitals';
 export const DataContext = createContext<IDataContext>(INITIAL_DATA);
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
-  const [rating, setRating] = useState(3);
-  const [adultsCount, setAdultsCount] = useState(2);
-  const [childrenCount, setChildrenCount] = useState(0);
+  const [rating, setRating] = useState<number>(3);
+  const [adultsCount, setAdultsCount] = useState<number>(2);
+  const [childrenCount, setChildrenCount] = useState<number>(0);
 
   return (
     <DataContext.Provider

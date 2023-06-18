@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { DataContext } from '../..';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 const Rating = () => {
   const { rating, setRating } = useContext(DataContext);
@@ -14,18 +15,19 @@ const Rating = () => {
     <div
       style={{
         display: 'flex',
+        border: '1px solid black',
+        padding: 10,
+        margin: '0 5px',
       }}
     >
       {starIds.map((starId) => {
         const isActiveStar = starId <= rating;
 
         return (
-          <div
-            key={starId}
-            onClick={() => handleClick(starId)}
-            style={{ color: isActiveStar ? 'red' : 'black' }}
-          >
-            <div style={{ fontSize: 40 }}>&nbsp;*&nbsp;</div>
+          <div key={starId} onClick={() => handleClick(starId)}>
+            <div style={{ fontSize: 30 }}>
+              {isActiveStar ? <AiFillStar /> : <AiOutlineStar />}
+            </div>
           </div>
         );
       })}
