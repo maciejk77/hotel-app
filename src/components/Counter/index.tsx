@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+// import React from 'react';
 
-const Counter = ({ label }: { label: string }) => {
-  const [count, setCount] = useState();
-
-  // label, min, max, step? 1/-1
+const Counter = ({
+  label,
+  id,
+  handler,
+  count,
+}: {
+  label: string;
+  id: string;
+  handler: any; // TODO type
+  count: number;
+}) => {
+  const handleCount = (step: number) => {
+    if (!count && step === -1) return;
+    handler((preVal: number) => (preVal >= 0 ? preVal + step : 0));
+  };
 
   return (
     <div
@@ -15,9 +26,13 @@ const Counter = ({ label }: { label: string }) => {
       }}
     >
       <div>&nbsp;{label}&nbsp;</div>
-      <div>+</div>
-      <div>&nbsp;3&nbsp;</div>
-      <div>-</div>
+      <div id={id} onClick={() => handleCount(1)}>
+        +
+      </div>
+      <div>&nbsp;{count}&nbsp;</div>
+      <div id={id} onClick={() => handleCount(-1)}>
+        -
+      </div>
     </div>
   );
 };
