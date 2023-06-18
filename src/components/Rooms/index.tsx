@@ -15,8 +15,8 @@ const Rooms = ({ hotelId }: { hotelId: string }) => {
 
       const updatedRooms = await rooms.filter(
         ({ occupancy }: { occupancy: IOccupancy }) =>
-          adultsCount === occupancy.maxAdults &&
-          childrenCount === occupancy.maxChildren
+          adultsCount <= occupancy.maxAdults &&
+          childrenCount <= occupancy.maxChildren
       );
 
       setRoomsData({ ratePlans, rooms: updatedRooms });
