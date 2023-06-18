@@ -1,21 +1,19 @@
 import React from 'react';
+import { IRoom } from '../../interfaces';
 
-const RoomCard = ({ room }: { room: any }) => {
-  // TODO types
-  return (
-    <div style={styles.container}>
-      <div style={{ width: '25%' }}>
-        <div>{room.name}</div>
-        <div>Adults: {room.occupancy.maxAdults}</div>
-        <div>Children: {room.occupancy.maxChildren}</div>
-      </div>
-
-      <div style={{ width: '100%' }}>
-        <div>{room.longDescription}</div>
-      </div>
+const RoomCard = ({ room }: { room: IRoom }) => (
+  <div style={styles.container}>
+    <div style={{ width: '25%' }}>
+      <div>{room.name}</div>
+      <div>Adults: {room.occupancy.maxAdults}</div>
+      <div>Children: {room.occupancy.maxChildren}</div>
     </div>
-  );
-};
+
+    <div style={{ width: '100%' }}>
+      <div>{room.longDescription}</div>
+    </div>
+  </div>
+);
 
 const styles = {
   container: {

@@ -28,9 +28,11 @@ const Rooms = ({ hotelId }: { hotelId: string }) => {
 
   return (
     <>
-      {rooms?.map((room: IRoom) => (
-        <RoomCard key={room.id} room={room} />
-      ))}
+      {rooms?.length ? (
+        rooms.map((room: IRoom) => <RoomCard key={room.id} room={room} />)
+      ) : (
+        <div>No matching rooms for your selection</div>
+      )}
     </>
   );
 };
