@@ -1,4 +1,4 @@
-// import React from 'react';
+import { TDispatch } from '../../interfaces';
 
 const Counter = ({
   label,
@@ -8,7 +8,7 @@ const Counter = ({
 }: {
   label: string;
   id: string;
-  handler: any; // TODO type
+  handler: TDispatch;
   count: number;
 }) => {
   const handleCount = (step: number) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { IHotel } from '../../interfaces';
 import Rooms from '../Rooms';
+import Images from '../Images';
 
 const HotelCard = ({ hotel }: { hotel: IHotel }) => {
   const { id, name, address1, address2, starRating, images } = hotel;
@@ -8,7 +9,7 @@ const HotelCard = ({ hotel }: { hotel: IHotel }) => {
   return (
     <div style={styles.container}>
       <div style={styles.flex}>
-        <div>images here</div>
+        <Images images={images} />
 
         <div>
           <div>{name}</div>

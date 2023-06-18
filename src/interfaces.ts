@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 // Data Context
 
-type TDispatch = Dispatch<SetStateAction<number>>;
+export type TDispatch = Dispatch<SetStateAction<number>>;
 
 export interface IDataContext {
   rating: number;

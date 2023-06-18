@@ -3,6 +3,7 @@ import Rating from './components/Rating';
 import Hotels from './components/Hotels';
 import Counter from './components/Counter';
 import { DataContext } from '.';
+import landscape from '../src/assets/city-wide.jpeg';
 // import './App.css';
 
 const App = () => {
@@ -10,9 +11,8 @@ const App = () => {
     useContext(DataContext);
 
   return (
-    <>
-      <div>Image</div>
-
+    <div>
+      <img src={landscape} alt="" />
       <div
         style={{
           display: 'flex',
@@ -33,9 +33,8 @@ const App = () => {
           handler={setChildrenCount}
         />
       </div>
-
       <Hotels />
-    </>
+    </div>
   );
 };
 
