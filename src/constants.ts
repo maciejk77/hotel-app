@@ -9,6 +9,4 @@ export const INITIAL_DATA = {
   setAdultsCount: () => {},
   childrenCount: 0,
   setChildrenCount: () => {},
-  hotels: [],
-  setHotels: () => {},
 };

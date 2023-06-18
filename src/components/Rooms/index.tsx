@@ -1,22 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ROOM_API_BASE_URL } from '../../constants';
-import { IRoom } from '../../interfaces';
-// import { IRatePlan, IRoom, IRooms } from '../../interfaces';
+import { IOccupancy, IRoom } from '../../interfaces';
+import { DataContext } from '../..';
 import RoomCard from '../RoomCard';
-
 const Rooms = ({ hotelId }: { hotelId: string }) => {
-  const [roomsData, setRoomsData] = useState<any>([]); // TODO: types
-
-  const { rooms }: { rooms: any } = roomsData; // TODO: types
+  const { adultsCount, childrenCount } = useContext(DataContext);
+  const [roomsData, setRoomsData] = useState<any>([]);
+  const { rooms }: { rooms: IRoom[] } = roomsData;
 
   useEffect(() => {
-    fetch(`${ROOM_API_BASE_URL}/${hotelId}`)
-      .then((res) => res.json())
-      .then((data) => setRoomsData(data));
+    const fetchData = async () => {
+      const res = await fetch(`${ROOM_API_BASE_URL}/${hotelId}`);
+      const { rooms, ratePlans } = await res.json();
 
+      const updatedRooms = await rooms.filter(
+        ({ occupancy }: { occupancy: IOccupancy }) =>
+          adultsCount === occupancy.maxAdults &&
+          childrenCount === occupancy.maxChildren
+      );
+
+      setRoomsData({ ratePlans, rooms: updatedRooms });
+    };
+
+    fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  //
+  }, [adultsCount, childrenCount]);
+
   return (
     <>
       {rooms?.map((room: IRoom) => (
