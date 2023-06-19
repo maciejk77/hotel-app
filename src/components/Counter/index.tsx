@@ -17,14 +17,7 @@ const Counter = ({
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        border: '1px solid blue',
-        padding: 10,
-        marginRight: 5,
-      }}
-    >
+    <div className="flex p-3 m-1 border border-black">
       <div>&nbsp;{label}&nbsp;</div>
       <div id={id} onClick={() => handleCount(1)}>
         +

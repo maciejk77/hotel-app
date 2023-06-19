@@ -2,13 +2,14 @@ import React from 'react';
 import { IHotel } from '../../interfaces';
 import Rooms from '../Rooms';
 import Images from '../Images';
+import Rating from '../Rating';
 
 const HotelCard = ({ hotel }: { hotel: IHotel }) => {
   const { id, name, address1, address2, starRating, images } = hotel;
 
   return (
-    <div style={styles.container}>
-      <div style={styles.flex}>
+    <div className="m-auto mb-1 p-1 w-3/4">
+      <div className="flex border-2 h-64 border-gray-300 bg-gray-300 p-3 justify-between">
         <Images images={images} />
 
         <div>
@@ -17,28 +18,11 @@ const HotelCard = ({ hotel }: { hotel: IHotel }) => {
           <div>{address2}</div>
         </div>
 
-        <div>{starRating}</div>
+        <Rating rating={starRating} />
       </div>
       <Rooms hotelId={id} />
     </div>
   );
-};
-
-const styles = {
-  container: {
-    margin: '0 auto',
-    border: '1px solid red',
-    width: '80%',
-    marginBottom: 25,
-    padding: 5,
-  },
-  flex: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    border: '1px dotted blue',
-    padding: 20,
-    marginBottom: 10,
-  },
 };
 
 export default HotelCard;

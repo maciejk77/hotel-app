@@ -4,22 +4,24 @@ import Hotels from './components/Hotels';
 import Counter from './components/Counter';
 import { DataContext } from '.';
 import landscape from '../src/assets/city-wide.jpeg';
-// import './App.css';
+import './App.css';
 
 const App = () => {
-  const { adultsCount, childrenCount, setAdultsCount, setChildrenCount } =
-    useContext(DataContext);
+  const {
+    adultsCount,
+    childrenCount,
+    setAdultsCount,
+    setChildrenCount,
+    rating,
+    setRating,
+  } = useContext(DataContext);
 
   return (
-    <div>
-      <img src={landscape} alt="" />
-      <div
-        style={{
-          display: 'flex',
-          marginBottom: 10,
-        }}
-      >
-        <Rating />
+    <div className="w-full m-auto">
+      <img src={landscape} alt="landscape" />
+
+      <div className="flex justify-center">
+        <Rating hasBorder isActive rating={rating} setRating={setRating} />
         <Counter
           label="Adults"
           id="adults"

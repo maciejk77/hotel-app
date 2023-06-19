@@ -1,31 +1,37 @@
-import React, { useContext } from 'react';
-import { DataContext } from '../..';
+import React from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { TDispatch } from '../../interfaces';
 
-const Rating = () => {
-  const { rating, setRating } = useContext(DataContext);
-
-  const starIds = Array.from({ length: 5 }, (_, i) => i + 1);
+const Rating = ({
+  numberOfStars = 5,
+  rating = '5',
+  setRating = () => {},
+  isActive = false,
+  hasBorder = false,
+}: {
+  numberOfStars?: number;
+  rating: string | number;
+  setRating?: TDispatch;
+  isActive?: boolean;
+  hasBorder?: boolean;
+}) => {
+  const starIds = Array.from({ length: numberOfStars }, (_, i) => i + 1);
 
   const handleClick = (e: React.SetStateAction<number>) => {
     setRating(e);
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        border: '1px solid black',
-        padding: 10,
-        margin: '0 5px',
-      }}
-    >
+    <div className={`flex p-3 m-1 ${hasBorder ? 'border border-black' : ''}`}>
       {starIds.map((starId) => {
-        const isActiveStar = starId <= rating;
+        const isActiveStar = starId <= Number(rating);
 
         return (
-          <div key={starId} onClick={() => handleClick(starId)}>
-            <div style={{ fontSize: 30 }}>
+          <div
+            key={starId}
+            onClick={isActive ? () => handleClick(starId) : () => {}}
+          >
+            <div className="text-2xl">
               {isActiveStar ? <AiFillStar /> : <AiOutlineStar />}
             </div>
           </div>
