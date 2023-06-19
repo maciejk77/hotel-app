@@ -7,13 +7,11 @@ const Rating = ({
   rating = '5',
   setRating = () => {},
   isActive = false,
-  hasBorder = false,
 }: {
   numberOfStars?: number;
   rating: string | number;
   setRating?: TDispatch;
   isActive?: boolean;
-  hasBorder?: boolean;
 }) => {
   const starIds = Array.from({ length: numberOfStars }, (_, i) => i + 1);
 
@@ -22,7 +20,7 @@ const Rating = ({
   };
 
   return (
-    <div className={`flex p-3 m-1 ${hasBorder ? 'border border-black' : ''}`}>
+    <div className="flex w-36">
       {starIds.map((starId) => {
         const isActiveStar = starId <= Number(rating);
 

@@ -17,7 +17,7 @@ const Counter = ({
   };
 
   return (
-    <div className="flex p-3 m-1 border border-black">
+    <div className="flex px-4 items-center  text-xl justify-center">
       <div>&nbsp;{label}&nbsp;</div>
       <div id={id} onClick={() => handleCount(1)}>
         +

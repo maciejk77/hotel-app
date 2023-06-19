@@ -31,7 +31,9 @@ const Rooms = ({ hotelId }: { hotelId: string }) => {
       {rooms?.length ? (
         rooms.map((room: IRoom) => <RoomCard key={room.id} room={room} />)
       ) : (
-        <div>No matching rooms for your selection</div>
+        <div className="border-2 border-white p-3">
+          No matching rooms for your selection
+        </div>
       )}
     </>
   );

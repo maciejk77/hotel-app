@@ -22,6 +22,6 @@ In the project directory, you can run:
 - View details for hotel: name, address, rating and room: type, max adults/children, description
 - See mockup for additional
 
-## Notes
+## Notes / To do / Questions
 
-TBC
+- Rooms not matching all criteria to be filtered out or hotels displayed regardless as per filters with no room available message - for image preview? (if so hotels, rooms data to be lifted to Context, refactor needed)

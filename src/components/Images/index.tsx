@@ -22,20 +22,20 @@ const Images = ({ images }: { images: IImage[] }) => {
   };
 
   const imageCollection = images.map(({ url }: { url: string }) => (
-    <div key={url} className="border-4 border-black">
-      <img alt="hotel" src={url} width={340} height={260} />
+    <div key={url} className="flex items-center h-[304px] w-[456px]">
+      <img alt="hotel" src={url} />
     </div>
   ));
 
   return (
-    <div className="flex align-center text-3xl">
+    <div className="text-6xl flex items-center relative">
       <BiChevronLeft
-        className="w-8 bg-black text-white"
+        className="absolute z-1 text-white"
         onClick={() => handleClick(-1)}
       />
-      <div> {imageCollection[index]}</div>
+      <div className="border-2 border-black mb-2">{imageCollection[index]}</div>
       <BiChevronRight
-        className="w-8 bg-black text-white"
+        className="absolute z-1 text-white left-[400px]"
         onClick={() => handleClick(1)}
       />
     </div>

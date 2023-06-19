@@ -23,13 +23,13 @@ const Hotels = () => {
   }, [rating]);
 
   return (
-    <>
+    <div className="mt-10">
       {hotels?.map((hotel) => (
         <div key={hotel.id}>
           <HotelCard hotel={hotel} />
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
