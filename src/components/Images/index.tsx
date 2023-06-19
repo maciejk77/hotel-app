@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { IImage } from '../../interfaces';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { STEP_BACK, STEP_NEXT } from '../../constants';
 
 const Images = ({ images }: { images: IImage[] }) => {
   const [index, setIndex] = useState<number>(0);
@@ -8,12 +9,12 @@ const Images = ({ images }: { images: IImage[] }) => {
   const lastIndex = images.length - 1;
 
   const handleClick = (step: number) => {
-    if (index === 0 && step === -1) {
+    if (!index && step === STEP_BACK) {
       setIndex(lastIndex);
       return;
     }
 
-    if (index === lastIndex && step === 1) {
+    if (index === lastIndex && step === STEP_NEXT) {
       setIndex(0);
       return;
     }
@@ -22,21 +23,21 @@ const Images = ({ images }: { images: IImage[] }) => {
   };
 
   const imageCollection = images.map(({ url }: { url: string }) => (
-    <div key={url} className="flex items-center h-[304px] w-[456px]">
+    <div key={url} className="flex items-center h-[200px] w-[300px]">
       <img alt="hotel" src={url} />
     </div>
   ));
 
   return (
-    <div className="text-6xl flex items-center relative">
+    <div className="text-2xl flex items-center relative">
       <BiChevronLeft
-        className="absolute z-1 text-white"
-        onClick={() => handleClick(-1)}
+        className="absolute text-white bg-black z-1"
+        onClick={() => handleClick(STEP_BACK)}
       />
-      <div className="border-2 border-black mb-2">{imageCollection[index]}</div>
+      <div className="border-4 border-black mb-2">{imageCollection[index]}</div>
       <BiChevronRight
-        className="absolute z-1 text-white left-[400px]"
-        onClick={() => handleClick(1)}
+        className="absolute text-white bg-black left-[280px] z-1"
+        onClick={() => handleClick(STEP_NEXT)}
       />
     </div>
   );

@@ -13,7 +13,7 @@ const HotelCard = ({ hotel }: { hotel: IHotel }) => {
         <Images images={images} />
 
         <div className="w-full px-2 text-xl">
-          <div>{name}</div>
+          <div className="font-bold">{name}</div>
           <div>{address1}</div>
           <div>{address2}</div>
         </div>
