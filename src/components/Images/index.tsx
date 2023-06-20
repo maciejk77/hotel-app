@@ -29,7 +29,7 @@ const Images = ({ images }: { images: IImage[] }) => {
   ));
 
   return (
-    <div className="text-2xl flex items-center relative">
+    <div data-testid="images" className="text-2xl flex items-center relative">
       <BiChevronLeft
         className="absolute text-white bg-black z-1"
         onClick={() => handleClick(STEP_BACK)}

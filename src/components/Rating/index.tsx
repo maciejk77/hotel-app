@@ -30,7 +30,15 @@ const Rating = ({
             onClick={isActive ? () => handleClick(starId) : () => {}}
           >
             <div className="text-2xl">
-              {isActiveStar ? <AiFillStar /> : <AiOutlineStar />}
+              {isActiveStar ? (
+                <div data-testid="star-filled">
+                  <AiFillStar />
+                </div>
+              ) : (
+                <div data-testid="star-outlined">
+                  <AiOutlineStar />
+                </div>
+              )}
             </div>
           </div>
         );

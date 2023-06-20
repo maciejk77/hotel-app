@@ -33,22 +33,22 @@ export interface IPosition {
 export interface IHotel {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   address1: string;
   address2: string;
-  postcode: string;
-  town: string;
-  countryCode: string;
-  country: string;
-  facilities: IFacility[];
-  telephone: string;
-  email: string;
+  postcode?: string;
+  town?: string;
+  countryCode?: string;
+  country?: string;
+  facilities?: IFacility[];
+  telephone?: string;
+  email?: string;
   images: IImage[];
-  checkInHours: string;
-  checkInMinutes: string;
-  checkOutHours: string;
-  checkOutMinutes: string;
-  position: IPosition;
+  checkInHours?: string;
+  checkInMinutes?: string;
+  checkOutHours?: string;
+  checkOutMinutes?: string;
+  position?: IPosition;
   starRating: string;
 }
 
@@ -57,7 +57,7 @@ export interface IHotel {
 export interface IOccupancy {
   maxAdults: number;
   maxChildren: number;
-  maxOverall: number;
+  maxOverall?: number;
 }
 
 export interface IFacility {
@@ -68,13 +68,13 @@ export interface IFacility {
 export interface IRoom {
   id: string;
   name: string;
-  shortDescription: string;
+  shortDescription?: string;
   longDescription: string;
   occupancy: IOccupancy;
-  disabledAccess: boolean;
-  bedConfiguration: string;
-  images: IImage[];
-  facilities: IFacility[];
+  disabledAccess?: boolean;
+  bedConfiguration?: string;
+  images?: IImage[];
+  facilities?: IFacility[];
 }
 
 export interface IRatePlan {
