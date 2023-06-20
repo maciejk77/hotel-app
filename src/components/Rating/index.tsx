@@ -20,7 +20,7 @@ const Rating = ({
   };
 
   return (
-    <div className="flex w-36">
+    <div className="flex w-36" data-testid="rating">
       {starIds.map((starId) => {
         const isActiveStar = starId <= Number(rating);
 

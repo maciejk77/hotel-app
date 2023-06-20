@@ -19,7 +19,7 @@ const Counter = ({
   };
 
   return (
-    <div className="flex px-2 text-xl">
+    <div className="flex px-2 text-xl" data-testid="counter">
       <div>{label}</div>
       <div className="flex pl-2 items-center">
         <BiChevronUpCircle id={id} onClick={() => handleCount(STEP_NEXT)} />

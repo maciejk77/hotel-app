@@ -23,7 +23,7 @@ const Hotels = () => {
   }, [rating]);
 
   return (
-    <div className="mt-10">
+    <div className="mt-10" data-testid="hotels">
       {hotels?.map((hotel) => (
         <div key={hotel.id}>
           <HotelCard hotel={hotel} />
