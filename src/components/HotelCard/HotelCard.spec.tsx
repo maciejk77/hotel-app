@@ -22,7 +22,7 @@ describe('<HotelCard />', () => {
     expect(hotelCard).toBeInTheDocument();
   });
 
-  test('renders name, occupancy, description data and images component', async () => {
+  test('renders name, occupancy, description data and images, rating components', async () => {
     const name = await screen.findByText(/Hotel Waldorf Astoria/);
     expect(name).toBeInTheDocument();
 
@@ -32,8 +32,8 @@ describe('<HotelCard />', () => {
     const address2 = await screen.findByText(/Floor 99/);
     expect(address2).toBeInTheDocument();
 
-    const starRating = await screen.findAllByTestId('star-filled');
-    expect(starRating).toHaveLength(3);
+    const ratingComponent = await screen.findByTestId('rating');
+    expect(ratingComponent).toBeInTheDocument();
 
     const imagesComponent = await screen.findAllByTestId('images');
     expect(imagesComponent).toHaveLength(1);

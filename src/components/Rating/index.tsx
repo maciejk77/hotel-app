@@ -28,6 +28,7 @@ const Rating = ({
           <div
             key={starId}
             onClick={isActive ? () => handleClick(starId) : () => {}}
+            data-testid="star"
           >
             <div className="text-2xl">
               {isActiveStar ? (
