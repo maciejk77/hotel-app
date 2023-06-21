@@ -23,7 +23,11 @@ const Images = ({ images }: { images: IImage[] }) => {
   };
 
   const imageCollection = images.map(({ url }: { url: string }) => (
-    <div key={url} className="flex items-center h-[200px] w-[300px]">
+    <div
+      key={url}
+      data-testid="image"
+      className="flex items-center h-[200px] w-[300px]"
+    >
       <img alt="hotel" src={url} />
     </div>
   ));

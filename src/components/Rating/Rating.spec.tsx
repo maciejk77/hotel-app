@@ -48,7 +48,9 @@ describe('<Rating />', () => {
     expect(starsOutlined).toHaveLength(1);
   });
 
-  test('receives the click and DO NOT trigger stars rating update', () => {
+  test.skip('receives the click and DO NOT trigger stars rating update', () => {
+    // FALSE POSITIVE atm, 3/2 are default values components mounts with
+
     render(<Rating {...props} />); // click from star with dummy handler eg () => {}
     const stars = screen.getAllByTestId('star');
     const starsFilled = screen.getAllByTestId('star-filled');
