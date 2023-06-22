@@ -27,15 +27,11 @@ In the project directory, you can run:
 ```
 As a User
 
-Given
-I have selected 3 star hotels
+GIVEN I have selected 3 star hotels
 
-When
-I select 2 adults and 2 children rooms
+WHEN I select 2 adults and 2 children rooms
 
-Then
-I expect to see list of rooms matching rating and adults/children selection
+THEN I expect to see list of rooms matching rating and adults/children selection
 
-And
-I expect to see hotel/s matching rating with message (No matching rooms for your selection) for rooms not matching adults/children criteria
+AND I expect to see hotel/s matching rating with message (No matching rooms for your selection) for rooms not matching adults/children criteria
 ```
