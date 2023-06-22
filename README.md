@@ -8,6 +8,7 @@ In the project directory, you can run:
 
 - `yarn` to install all dependencies
 - `yarn start` to view project at [http://localhost:3000](http://localhost:3000) in the browser.
+- `yarn test` to run tests
 
 # API
 
