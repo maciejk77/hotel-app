@@ -33,14 +33,14 @@ const Images = ({ images }: { images: IImage[] }) => {
   ));
 
   return (
-    <div data-testid="images" className="text-2xl flex items-center relative">
+    <div data-testid="images" className="text-5xl flex items-center relative">
       <BiChevronLeft
-        className="absolute text-white bg-black z-1"
+        className="absolute text-white z-1"
         onClick={() => handleClick(STEP_BACK)}
       />
-      <div className="border-4 border-black mb-2">{imageCollection[index]}</div>
+      <div className="border-2 border-black mb-2">{imageCollection[index]}</div>
       <BiChevronRight
-        className="absolute text-white bg-black left-[280px] z-1"
+        className="absolute text-white left-[255px] z-1"
         onClick={() => handleClick(STEP_NEXT)}
       />
     </div>

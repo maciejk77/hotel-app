@@ -8,17 +8,21 @@ const HotelCard = ({ hotel }: { hotel: IHotel }) => {
   const { id, name, address1, address2, starRating, images } = hotel;
 
   return (
-    <div data-testid="hotel-card" className="border-2 border-black mb-5 p-4">
+    <div data-testid="hotel-card" className="border-2 border-black mb-5">
       <div className="flex">
-        <Images images={images} />
+        <div className="mt-3 ml-3 mb-1">
+          <Images images={images} />
+        </div>
 
-        <div className="w-full px-4 text-xl">
+        <div className="w-full ml-4 mt-3 text-xl">
           <div className="font-bold">{name}</div>
           <div>{address1}</div>
           <div>{address2}</div>
         </div>
 
-        <Rating rating={starRating} />
+        <div className="mt-3 mr-3">
+          <Rating rating={starRating} />
+        </div>
       </div>
 
       <Rooms hotelId={id} />
