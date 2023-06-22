@@ -39,5 +39,3 @@ I expect to see list of rooms matching rating and adults/children selection
 And
 I expect to see hotel/s matching rating with message (No matching rooms for your selection) for rooms not matching adults/children criteria
 ```
-
-- Rooms not matching all criteria to be filtered out or hotels displayed regardless as per filters with no room available message - for image preview? (if so hotels, rooms data to be lifted to Context, refactor needed)
