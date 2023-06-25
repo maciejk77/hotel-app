@@ -15,7 +15,7 @@ const RoomCard = ({ room }: { room: IRoom }) => {
         <div>Children: {occupancy.maxChildren}</div>
       </div>
 
-      <div className="w-7/12">
+      <div className="w-7/12 mr-6">
         <div>{longDescription}</div>
       </div>
     </div>
