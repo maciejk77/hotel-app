@@ -10,7 +10,7 @@ const HotelCard = ({ hotel }: { hotel: IHotel }) => {
   return (
     <div data-testid="hotel-card" className="border-2 border-black mb-5">
       <div className="flex">
-        <div className="mt-3 ml-3 mb-1">
+        <div className="mt-3 ml-3 mb-1 bg-black">
           <Images images={images} />
         </div>
 

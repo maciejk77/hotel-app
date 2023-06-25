@@ -38,7 +38,7 @@ const Images = ({ images }: { images: IImage[] }) => {
         className="absolute text-white z-1"
         onClick={() => handleClick(STEP_BACK)}
       />
-      <div className="border-2 border-black mb-2">{imageCollection[index]}</div>
+      <div>{imageCollection[index]}</div>
       <BiChevronRight
         className="absolute text-white left-[255px] z-1"
         onClick={() => handleClick(STEP_NEXT)}
