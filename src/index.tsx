@@ -2,7 +2,7 @@ import { useState, createContext, StrictMode, ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { IDataContext, IHotel, IRoom, IRooms } from './interfaces';
+import { IDataContext, IHotel, IRooms } from './interfaces';
 import { INITIAL_DATA } from './constants';
 import reportWebVitals from './reportWebVitals';
 
@@ -13,7 +13,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [adultsCount, setAdultsCount] = useState<number>(2);
   const [childrenCount, setChildrenCount] = useState<number>(0);
   const [hotels, setHotels] = useState<IHotel[]>([]);
-  // const [roomsData, setRoomsData] = useState<any>([]);
+  const [roomsData, setRoomsData] = useState<IRooms>({});
 
   return (
     <DataContext.Provider
@@ -26,8 +26,8 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         setChildrenCount,
         hotels,
         setHotels,
-        // roomsData,
-        // setRoomsData,
+        roomsData,
+        setRoomsData,
       }}
     >
       {children}

@@ -13,6 +13,6 @@ export const INITIAL_DATA = {
   setChildrenCount: () => {},
   hotels: [],
   setHotels: () => {},
-  // roomsData: [],
-  // setRoomsData: () => {},
+  roomsData: {},
+  setRoomsData: () => {},
 };

@@ -1,12 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { HOTEL_API_URL } from '../../constants';
 import HotelCard from '../HotelCard';
-import { IHotel } from '../../interfaces';
 import { DataContext } from '../..';
 
 const Hotels = () => {
-  const { rating } = useContext(DataContext);
-  const [hotels, setHotels] = useState<IHotel[]>([]);
+  const {
+    rating,
+    hotels,
+    setHotels,
+    // roomsData: { rooms },
+  } = useContext(DataContext);
+
+  // Provided that each room had foreign key ie hotelId the below could control rendering of HotelCard
+  // based on selection adults/children/rating e.g. won't show HotelCard at all if no available rooms
+  // as oppose to "No matching rooms for your selection" message at the moment
+
+  // e.g.
+  // const canShow = (id: any) => rooms?.map((room) => room.id).includes(id);
 
   useEffect(() => {
     fetch(HOTEL_API_URL)
@@ -25,6 +35,7 @@ const Hotels = () => {
   return (
     <div className="mt-10" data-testid="hotels">
       {hotels?.map((hotel) => (
+        // canShow(hotel.id) && // see comments above
         <div key={hotel.id}>
           <HotelCard hotel={hotel} />
         </div>

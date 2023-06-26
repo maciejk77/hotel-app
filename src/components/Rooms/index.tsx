@@ -1,18 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { ROOM_API_BASE_URL } from '../../constants';
 import { IOccupancy, IRoom, IRooms } from '../../interfaces';
 import { DataContext } from '../..';
 import RoomCard from '../RoomCard';
 const Rooms = ({ hotelId }: { hotelId: string }) => {
-  const {
-    adultsCount,
-    childrenCount,
-    // roomsData,
-    // setRoomsData
-  } = useContext(DataContext);
+  const { adultsCount, childrenCount, roomsData, setRoomsData } =
+    useContext(DataContext);
 
-  const [roomsData, setRoomsData] = useState<any>([]);
-  const { rooms }: { rooms: IRoom[] } = roomsData;
+  const { rooms } = roomsData;
 
   useEffect(() => {
     const fetchData = async () => {

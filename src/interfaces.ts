@@ -13,8 +13,8 @@ export interface IDataContext {
   setChildrenCount: TDispatch;
   hotels: IHotel[];
   setHotels: Dispatch<SetStateAction<IHotel[]>>;
-  // roomsData: IRooms;
-  // setRoomsData: Dispatch<SetStateAction<IRooms>>;
+  roomsData: IRooms;
+  setRoomsData: Dispatch<SetStateAction<IRooms>>;
 }
 
 // Hotel API data
@@ -89,6 +89,6 @@ export interface IRatePlan {
 }
 
 export interface IRooms {
-  rooms: IRoom[];
-  ratePlans: IRatePlan[];
+  rooms?: IRoom[];
+  ratePlans?: IRatePlan[];
 }
