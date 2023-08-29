@@ -26,7 +26,9 @@ In the project directory, you can run:
 ## Screenshot
 
 Completed MVP
+
 <img src="public/screenshot.png" width="800">
 
 Mockup
-<img src="public/mockup.png" width="800">
+
+<img src="public/mockup.png" width="600">
