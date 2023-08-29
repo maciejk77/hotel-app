@@ -23,16 +23,10 @@ In the project directory, you can run:
 - View details for hotel: name, address, rating and room: type, max adults/children, description
 - See mockup for additional
 
-## Notes / To do / Questions
+## Screenshot
 
-```
-As a User
+Completed MVP
+<img src="public/screenshot.png" width="800">
 
-GIVEN I have selected 3 star hotels
-
-WHEN I select 2 adults and 2 children rooms
-
-THEN I expect to see list of rooms matching rating and adults/children selection
-
-AND I expect to see hotel/s matching rating with message (No matching rooms for your selection) for rooms not matching adults/children criteria
-```
+Mockup
+<img src="public/mockup.png" width="800">
