@@ -18,6 +18,7 @@ const App = () => {
   return (
     <div data-testid="app" className="mx-auto w-[800px] relative">
       <img className="m-auto" src={landscape} alt="landscape" />
+      <div>NEW TEXT ADDED</div>
 
       <div className="flex justify-center items-center m-auto p-4 border-2 bg-white outline outline-2 outline-white border-black w-[500px] z-1 absolute top-[100px] left-[150px]">
         <div className="mr-6">
